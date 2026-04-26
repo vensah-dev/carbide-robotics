@@ -1,13 +1,12 @@
+"use client";
+
+import { Navbar } from "@/components/navbar";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[var(--background-primary)]">
       {/* Minimal Navigation */}
-      <nav className="w-full py-6 px-8 flex justify-center items-center border-b border-[var(--border-color)]">
-        <div className="flex items-center gap-8">
-          <a href="/" className="text-[var(--accent-primary)] font-medium">About</a>
-          <a href="/accelerator" className="text-[var(--font-secondary)] hover:text-[var(--font-primary)] transition-colors font-medium">Accelerator</a>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="py-20 px-8 text-center">
@@ -56,7 +55,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* 2025 Achievements */}
             <div className="bg-[var(--background-secondary)] border border-[var(--border-color)] rounded-xl p-8">
-              <h3 className="text-xl font-bold text-[var(--font-primary)] mb-6">2025 Achievements</h3>
+              <h3 className="text-2xl font-bold text-[var(--font-primary)] mb-6">2025 Achievements</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 border-b border-[var(--border-color)]">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -75,7 +74,7 @@ export default function Home() {
 
             {/* 2026 Projections */}
             <div className="bg-[var(--background-secondary)] border border-[var(--border-color)] rounded-xl p-8">
-              <h3 className="text-xl font-bold text-[var(--font-primary)] mb-6">2026 Projections</h3>
+              <h3 className="text-2xl font-bold text-[var(--font-primary)] mb-6">2026 Projections</h3>
               <div className="grid grid-cols-1 gap-3">
                 {[
                   "Samsung Solve for Tomorrow 2026",
