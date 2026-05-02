@@ -1,11 +1,11 @@
- /**
- * @type {import('next').NextConfig}
- */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/carbide-robotics',
   images: {
-    unoptimized: true,  // 👈 this is the fix
+    unoptimized: true,
   },
 };
 
-module.exports = nextConfig
+export default nextConfig;
