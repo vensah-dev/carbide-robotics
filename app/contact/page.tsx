@@ -1,24 +1,8 @@
-import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
+import { Navbar } from "@/components/navbar";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Carbide Robotics",
+  title: "Carbide Robotics \\ STEM Accelerator",
   description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
   authors: [{ name: "Carbide Robotics" }],
@@ -47,14 +31,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function AcceleratorPage() {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
+    <div className="min-h-screen bg-[var(--background-primary)]">
+      {/* Navigation */}
+      <Navbar />
+
+      {/* Footer */}
+      <footer className="w-full py-12 px-8 border-t border-[var(--border-color)] bg-[var(--footer-bg)]">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-[var(--footer-font)]">
+            © 2024 Carbide Robotics. Empowering STEM innovation through robotics competitions and mentorship.
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }

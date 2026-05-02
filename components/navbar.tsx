@@ -15,18 +15,28 @@ export function Navbar() {
         <span className="text-xl font-semibold text-[var(--font-primary)]">Carbide Robotics</span>
       </div>
       <div className="flex items-center gap-8">
+
         <Link 
           href="/" 
           className={`font-medium ${pathname === '/' ? 'text-[var(--accent-primary)]' : 'text-[var(--font-secondary)] hover:text-[var(--font-primary)] transition-colors'}`}
         >
           About
         </Link>
+
         <Link 
           href="/accelerator" 
           className={`font-medium ${pathname === '/accelerator' ? 'text-[var(--accent-primary)]' : 'text-[var(--font-secondary)] hover:text-[var(--font-primary)] transition-colors'}`}
         >
           Accelerator
         </Link>
+
+        <Link 
+          href="/contact" 
+          className={`font-medium ${pathname === '/contact' ? 'text-[var(--accent-primary)]' : 'text-[var(--font-secondary)] hover:text-[var(--font-primary)] transition-colors'}`}
+        >
+          Contact
+        </Link>
+        
       </div>
     </nav>
   );
