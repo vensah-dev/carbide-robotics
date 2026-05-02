@@ -18,9 +18,12 @@ export default function AcceleratorPage() {
           
           <div className="bg-[var(--background-secondary)] border border-[var(--border-color)] rounded-xl p-8">
             <p className="text-lg text-[var(--font-secondary)] mb-8 text-center">
-              Our accelerator programme aids passionate thinkers in creating innovative STEM projects 
-              by providing access to expert mentor coaches and facilitating connections between 
-              like-minded students for collaborative innovation.
+              Our Accelerator Programme aims to cultivate a community where STEM and 
+              Engineering projects are given the resources to flourish, by 
+              letting like-minded people meet and pairing each passionate student 
+              project with a mentor with experiences in the specific niches. 
+              This enables students in Singapore to build a deep STEM portfolio in 
+              their selected niche especially if their school is not STEM oriented.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
