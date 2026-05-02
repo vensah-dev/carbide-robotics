@@ -2,9 +2,10 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  output: 'export',
   images: {
-    // domains: ['images.unsplash.com', 'assets.aceternity.com'],
+    unoptimized: true,  // 👈 this is the fix
   },
-}
+};
 
 module.exports = nextConfig
