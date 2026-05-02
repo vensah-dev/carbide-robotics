@@ -10,7 +10,7 @@ export function Navbar() {
   return (
     <nav className="w-full py-6 px-8 flex justify-between items-center border-b border-[var(--border-color)]">
       <div className="flex items-center gap-2">
-        <Image src="/icons/icon.png" width={32} height={32} alt="Carbide Robotics Logo" />
+        <Image src="@/public/icons/icon.png" width={32} height={32} alt="Carbide Robotics Logo" />
         <span className="text-xl font-semibold text-[var(--font-primary)]">Carbide Robotics</span>
       </div>
       <div className="flex items-center gap-8">
