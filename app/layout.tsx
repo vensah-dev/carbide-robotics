@@ -18,17 +18,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Carbide Robotics",
+  title: "Carbide Labs",
   description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }],
+  authors: [{ name: "Carbide Labs" }],
   robots: "index, follow",
   icons: {
     icon: "/carbide-robotics/icons/icon.png",
     apple: "/carbide-robotics/icons/apple-icon.png",  // 180x180px recommended
   },
   openGraph: {
-    title: "Carbide Robotics | STEM Innovation & Competition",
+    title: "Carbide Labs | STEM Innovation & Competition",
     description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
     type: "website",
     images: [
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
         url: "../icons/icon.png",  // needs full basePath prefix
         width: 1200,  // recommended OG image size
         height: 630,
-        alt: "Carbide Robotics Logo",
+        alt: "Carbide Labs Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carbide Robotics | STEM Innovation & Competition",
+    title: "Carbide Labs | STEM Innovation & Competition",
     description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
   },
 };
@@ -53,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-background-primary`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

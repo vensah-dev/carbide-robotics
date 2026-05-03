@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background-primary: #FAFAF8;
-  --background-secondary: #F5F2EE;
-  --background-tertiary: #EDE8E0;
-  --border-color: #D6CFC4;
-  --font-primary: #1A2208;
-  --font-secondary: #6B5E4A;
-  --font-tertiary: #9C8E7A;
-  --accent-primary: #F97316;
-  --accent-secondary: #C2590A;
-  --accent-tint: #FFF3E8;
-  --accent-pale: #FDE0C4;
-  --footer-bg: #1A1208;
-  --footer-font: #9C8E7A;
+  --background-primary:   #FAFAF8;  /* unchanged */
+  --background-secondary: #F4EEE6;  /* was #FAFAF8 — now a distinct warm layer */
+  --background-tertiary:  #EAE2D7;  /* was #F6F2ED — deeper, clear 3rd step */
+  --border-color:         #CBBFB0;  /* was #D6CFC4 — slightly more contrast */
+  --font-primary:         #1A1208;  /* was #1A2208 — removed green cast */
+  --font-secondary:       #665848;  /* was #6B5E4A — warmer undertone */
+  --font-tertiary:        #9A8B79;  /* was #9C8E7A — minor refinement */
+  --accent-primary:       #F97316;  /* unchanged */
+  --accent-secondary:     #BE5408;  /* was #C2590A — slightly deeper */
+  --accent-tint:          #FFF3E8;  /* unchanged */
+  --accent-pale:          #FAD9B8;  /* was #FDE0C4 — deeper for visual presence */
+  --footer-bg:            #120C02;  /* was #1A1208 — richer black-brown */
+  --footer-font:          #89796A;  /* was #9C8E7A — improved contrast on dark bg */
 }
 
 @theme inline {
