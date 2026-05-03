@@ -12,7 +12,7 @@ export function Mission() {
         <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
         {/* <div className="w-16 h-1 bg-[var(--accent-primary)] mx-auto rounded-full"></div> */}
         <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
-          Carbide Labs is a student-led community focused on building niche and deep STEM portfolios.
+          Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
         </p>
       </div>
 
@@ -24,7 +24,7 @@ export function Mission() {
         <Card
           icon={"🏆"}
           title={"Competitions"}
-          description={"Multi-disciplinary R&D teams formed through our Carbide Labs community participate in national and international robotics competitions. These rich talents create an excellent portfolio year after year."}
+          description={"Multi-disciplinary R&D teams formed through our Carbide Robotics community participate in national and international robotics competitions. These rich talents create an excellent portfolio year after year."}
           colorClass={"bg-amber-500/15"}
           BGz={3}
         />

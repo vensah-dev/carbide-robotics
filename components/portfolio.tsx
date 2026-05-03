@@ -61,7 +61,7 @@ export function Portfolio() {
               <span className="text-font-secondary text-md">{competition.name}</span>
             </span>
 
-            <div className={` py-1 px-3 max-h-min text-xs ${competition.staus === "Upcoming" ? "bg-amber-500/25" : "bg-green-500/25"} rounded-full`}>{competition.staus}</div>
+            <div className={` py-1 px-3 max-h-min whitespace-nowrap w-fit text-xs ${competition.staus === "Upcoming" ? "bg-amber-500/25" : "bg-green-500/25"} rounded-full`}>{competition.staus}</div>
           </div>
         ))}
       </div>

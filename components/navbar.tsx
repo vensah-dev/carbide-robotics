@@ -36,8 +36,8 @@ export function Navbar() {
     <nav className="w-full py-5 px-8 flex justify-between items-center border-b border-gray-300/25">
       {/* logo and title */}
       <Link href="/" className="flex items-center gap-2">
-        <Image src={icon} width={32} height={32} alt="Carbide Labs Logo" className="rounded-full"/>
-        <span className="text-xl font-semibold text-gray-900">Carbide Labs</span>
+        <Image src={icon} width={32} height={32} alt="Carbide Robotics Logo" className="rounded-full"/>
+        <span className="text-xl font-semibold text-gray-900">Carbide Robotics</span>
       </Link>
 
       {/* Desktop Navigation */}

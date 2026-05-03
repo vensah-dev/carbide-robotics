@@ -3,17 +3,17 @@ import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Carbide Labs \\ STEM Accelerator",
+  title: "Carbide Robotics \\ STEM Accelerator",
   description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Labs" }],
+  authors: [{ name: "Carbide Robotics" }],
   robots: "index, follow",
   icons: {
     icon: "/carbide-robotics/icons/icon.png",
     apple: "/carbide-robotics/icons/apple-icon.png",  // 180x180px recommended
   },
   openGraph: {
-    title: "Carbide Labs | STEM Innovation & Competition",
+    title: "Carbide Robotics | STEM Innovation & Competition",
     description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
     type: "website",
     images: [
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
         url: "../icons/icon.png",  // needs full basePath prefix
         width: 1200,  // recommended OG image size
         height: 630,
-        alt: "Carbide Labs Logo",
+        alt: "Carbide Robotics Logo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carbide Labs | STEM Innovation & Competition",
+    title: "Carbide Robotics | STEM Innovation & Competition",
     description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
   },
 };
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <div className="text-2xl mt-1">✉️</div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">contact@carbidelabs.org</p>
+                  <p className="text-gray-600">contact@carbiderobotics.org</p>
                 </div>
               </div>
               
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div className="text-2xl mt-1">🌐</div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Website</h3>
-                  <p className="text-gray-600">www.carbidelabs.org</p>
+                  <p className="text-gray-600">www.carbiderobotics.org</p>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function Home() {
         <Portfolio />
 
         {/* CTA Section */}
-        <section className="text-center py-16">
+        <section className="text-center py-16 px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Innovate?</h2>
           
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -36,7 +36,7 @@ export default function Home() {
             competitions and transformative mentorship programmes.
           </p>
 
-          <div className="space-y-4 md:space-y-0 md:space-x-6">
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
             <PrimaryButton text={"Accelerator Programme"} />
             <SecondaryButton text={"Contact"} />
           </div>
