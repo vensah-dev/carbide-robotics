@@ -57,11 +57,11 @@ export function Portfolio() {
           <div key={index} className="flex justify-between gap-3 pb-3 px-3 border-b border-gray-300 last:border-0 w-full">
             <span className="text-gray-600 text-md">{competition.name}</span>
 
-            <div className={` py-1 px-3 text-xs ${competition.staus === "Upcoming" ? "bg-amber-500/25" : "bg-green-500/25"} rounded-full`}>{competition.staus}</div>
+            <div className={` py-1 px-3 max-h-min text-xs ${competition.staus === "Upcoming" ? "bg-amber-500/25" : "bg-green-500/25"} rounded-full`}>{competition.staus}</div>
           </div>
         ))}
       </div>
-      
+
     </section>
   );
 }

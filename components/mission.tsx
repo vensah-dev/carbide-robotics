@@ -1,5 +1,7 @@
 "use client";
 
+import Card from "@/components/card";
+
 export function Mission() {
 
   return (
@@ -19,51 +21,33 @@ export function Mission() {
 
 
         {/* Competitions */}
-        <div className="bg-background-tertiary border border-border-color/75 rounded-xl p-8">
-          <div className="bg-amber-500/15 w-min rounded-2xl mb-4">
-            <h3 className="text-2xl md:text-5xl font-bold p-4 w-min">🏆</h3>
-          </div>
-          
-          <h3 className="text-font-primary font-semibold text-2xl">Competitions</h3>
-
-          <h3 className="text-font-secondary">
-            Multi-disciplinary R&D teams formed through our Carbide Labs community participate in national 
-            and international robotics competitions. These rich talents create an excellent portfolio year after year.
-            
-          </h3>
-        </div>
+        <Card
+          icon={"🏆"}
+          title={"Competitions"}
+          description={"Multi-disciplinary R&D teams formed through our Carbide Labs community participate in national and international robotics competitions. These rich talents create an excellent portfolio year after year."}
+          colorClass={"bg-amber-500/15"}
+          BGz={3}
+        />
 
 
         {/* STEM Accelerator */}
-        <div className="bg-background-tertiary border border-border-color/75 rounded-xl p-8">
-          <div className="bg-green-700/15 w-min rounded-2xl mb-4">
-            <h3 className="text-2xl md:text-5xl font-bold p-4 w-min">🌱</h3>
-          </div>
-          
-          <h3 className="text-font-primary font-semibold text-2xl">Accelerator</h3>
-
-          <h3 className="text-font-secondary">
-            A curated programme connecting passionate students with mentor coaches across niche STEM fields.
-            Participants' skills are stretched by creating projects and participating 
-            in related competitions.
-          </h3>
-        </div>
+        <Card
+          icon={"🌱"}
+          title={"Accelerator"}
+          description={"A curated programme connecting passionate students with mentor coaches across niche STEM fields. Participants' skills are stretched by creating projects and participating in related competitions."}
+          colorClass={"bg-green-700/15"}
+          BGz={3}
+        />
 
 
         {/* Mentorship Pipeline */}
-        <div className="bg-background-tertiary border border-border-color/75 rounded-xl p-8">
-          <div className="bg-blue-500/15 w-min rounded-2xl mb-4">
-            <h3 className="text-2xl md:text-5xl font-bold p-4 w-min">👨🏼‍🏫</h3>
-          </div>
-          
-          <h3 className="text-font-primary font-semibold text-2xl">Mentorship</h3>
-
-          <h3 className="text-font-secondary">
-            Exemplary students from our teams are given the opportunity to become mentors,
-            guiding the next batch of students and fostering a sustainable culture of peer mentorship and knowledge sharing.
-          </h3>
-        </div>
-
+        <Card
+          icon={"👨🏼‍🏫"}
+          title={"Mentorship"}
+          description={"Exemplary students from our teams are given the opportunity to become mentors, guiding the next batch of students and fostering a sustainable culture of peer mentorship and knowledge sharing."}
+          colorClass={"bg-blue-500/15"}
+          BGz={3}
+        />
 
       </div>
 
