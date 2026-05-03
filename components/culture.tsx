@@ -3,7 +3,7 @@
 import { Card } from "@/components/card";
 import { useEffect, useRef } from "react";
 
-export function Mission() {
+export function Culture() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export function Mission() {
       data-animate-on-scroll
     >
       <div className="text-left mb-12">
-        <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
+        <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Culture</h2>
         <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
           Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
         </p>
@@ -44,27 +44,27 @@ export function Mission() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Competitions */}
         <Card
-          icon={"🏆"}
-          title={"Competitions"}
-          description={"Multi-disciplinary R&D teams formed through our Carbide Robotics community participate in national and international robotics competitions. These rich talents create an excellent portfolio year after year."}
-          colorClass={"bg-amber-500/15"}
+          icon={"🎉"}
+          title={"Work Hard, Celebrate Hard"}
+          description={"Every win, big or small, is celebrated with equal enthusiasm. We believe in recognizing the hard work and dedication of our members, fostering a culture of appreciation and motivation."}
+          colorClass={"bg-amber-700/15"}
           BGz={3}
         />
 
         {/* STEM Accelerator */}
         <Card
-          icon={"🌱"}
-          title={"Accelerator"}
-          description={"A curated programme connecting passionate students with mentor coaches across niche STEM fields. Participants' skills are stretched by creating projects and participating in related competitions."}
-          colorClass={"bg-green-700/15"}
+          icon={"✊"}
+          title={"Empowerment"}
+          description={"We empower our members to take ownership of their growth. By providing resources, mentorship, and a supportive community, we enable students to stretch their capabilities."}
+          colorClass={"bg-purple-700/15"}
           BGz={3}
         />
 
         {/* Mentorship Pipeline */}
         <Card
-          icon={"👨🏼‍🏫"}
-          title={"Mentorship"}
-          description={"Exemplary students from our teams are given the opportunity to become mentors, guiding the next batch of students and fostering a sustainable culture of peer mentorship and knowledge sharing."}
+          icon={"🎗️"}
+          title={"Giving Back"}
+          description={"As a student-led organisation, we understand the value of mentorship. We encourage our students to give back by mentoring newer students to continue the sharing of knowledge."}
           colorClass={"bg-blue-500/15"}
           BGz={3}
         />

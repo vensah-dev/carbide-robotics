@@ -40,7 +40,7 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <div className="max-w-6xl mx-auto px-8 py-16">
-        <section className="text-center mb-16">
+        <section className="text-center mb-16 animate-fade-in-up">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
           <div className="w-20 h-1 bg-orange-500 mx-auto rounded-full"></div>
           <p className="text-lg text-gray-600 mt-6 max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export default function ContactPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div>
+          <div className="animate-fade-in-up animation-delay-300">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
             
             <div className="space-y-4">
@@ -66,40 +66,15 @@ export default function ContactPage() {
                 <div className="text-2xl mt-1">✉️</div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">contact@carbiderobotics.com</p>
+                  <p className="text-gray-600">contact@carbiderobotics.org</p>
                 </div>
               </div>
               
-              <div className="flex items-start gap-4">
-                <div className="text-2xl mt-1">📱</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Phone</h3>
-                  <p className="text-gray-600">+65 1234 5678</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="text-2xl mt-1">🌐</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900">Website</h3>
-                  <p className="text-gray-600">www.carbiderobotics.com</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-8">
-              <h3 className="font-semibold text-gray-900 mb-4">Follow Us</h3>
-              <div className="flex gap-4">
-                <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Facebook</a>
-                <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Twitter</a>
-                <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">LinkedIn</a>
-                <a href="#" className="text-gray-600 hover:text-orange-500 transition-colors">Instagram</a>
-              </div>
             </div>
           </div>
           
           {/* Contact Form */}
-          <div>
+          <div className="animate-fade-in-up animation-delay-500">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
             <form className="space-y-6">
               <div>

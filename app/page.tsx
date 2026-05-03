@@ -5,14 +5,37 @@ import { Mission } from "@/components/mission";
 import { Portfolio } from "@/components/portfolio";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";
-import { PrimaryButton } from "@/components/primary-button";
-import { SecondaryButton } from "@/components/secondary-button";
+import { CallToAction } from "@/components/call-to-action";
 
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function Home() {
+  const ctaSectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in-view");
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ctaSectionRef.current) {
+      observer.observe(ctaSectionRef.current);
+    }
+
+    return () => {
+      if (ctaSectionRef.current) {
+        observer.unobserve(ctaSectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-baclground-primary text-font-primary">
+    <div className="min-h-screen bg-[var(--background-primary)]">
       {/* Minimal Navigation */}
       <Navbar />
 
@@ -28,20 +51,7 @@ export default function Home() {
         <Portfolio />
 
         {/* CTA Section */}
-        <section className="text-center py-32 px-8 bg-background-secondary border border-border-color/25">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Innovate?</h2>
-          
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join our mission to empower the talents of tomorrow and enhance STEM education through 
-            competitions and transformative mentorship programmes.
-          </p>
-
-          <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <PrimaryButton text={"Accelerator Programme"} />
-            <SecondaryButton text={"Contact"} />
-          </div>
-
-        </section>
+        <CallToAction ref={ctaSectionRef} />
 
       </div>
 
