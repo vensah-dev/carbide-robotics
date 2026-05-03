@@ -7,7 +7,7 @@ import { SecondaryButton } from "./secondary-button";
 export function Hero() {
 
   return (
-      <section className="flex items-center px-8 text-left h-[calc(100vh-81px)]">
+      <div className="flex items-center px-8 text-left h-[calc(100vh-73px)]">
         <div className="max-w-6xl ">
 
           <h1 className="text-5xl md:text-8xl font-bold text-[var(--font-primary)] mb-3 leading-[1.15]">
@@ -24,6 +24,6 @@ export function Hero() {
           </div>
 
         </div>
-      </section>
+      </div>
   );
 }

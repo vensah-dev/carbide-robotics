@@ -66,7 +66,7 @@ export default function ContactPage() {
                 <div className="text-2xl mt-1">✉️</div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Email</h3>
-                  <p className="text-gray-600">contact@carbiderobotics.org</p>
+                  <p className="text-gray-600">contact@carbiderobotics.com</p>
                 </div>
               </div>
               
@@ -82,7 +82,7 @@ export default function ContactPage() {
                 <div className="text-2xl mt-1">🌐</div>
                 <div>
                   <h3 className="font-semibold text-gray-900">Website</h3>
-                  <p className="text-gray-600">www.carbiderobotics.org</p>
+                  <p className="text-gray-600">www.carbiderobotics.com</p>
                 </div>
               </div>
             </div>

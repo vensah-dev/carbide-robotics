@@ -5,7 +5,7 @@ import { Card } from "@/components/card";
 export function Mission() {
 
   return (
-    <section id="overview" className="bg-background-secondary border border-border-color/25 px-8 py-32">
+    <div id="overview" className="bg-background-secondary border border-border-color/25 px-8 py-32 m-0">
 
 
       <div className="text-left mb-12">
@@ -51,6 +51,6 @@ export function Mission() {
 
       </div>
 
-    </section>
+    </div>
   );
 }

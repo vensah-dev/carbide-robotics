@@ -49,7 +49,7 @@ export function Portfolio() {
   ]
 
   return (
-    <section className="px-8 py-16">
+    <div className="px-8 py-32">
       <h3 className="text-6xl font-bold text-font-primary mb-12">Portfolio</h3>
 
       <div className="grid grid-cols-1 gap-3 pb-4">
@@ -66,6 +66,6 @@ export function Portfolio() {
         ))}
       </div>
 
-    </section>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-baclground-primary text-font-primary">
       {/* Minimal Navigation */}
       <Navbar />
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Hero />
 
       {/* Content Sections */}
-      <div className="w-screen py-16 space-y-20">
+      <div className="w-screen">
         {/* Overview Card */}
         <Mission />
 
@@ -28,7 +28,7 @@ export default function Home() {
         <Portfolio />
 
         {/* CTA Section */}
-        <section className="text-center py-16 px-8">
+        <section className="text-center py-32 px-8 bg-background-secondary border border-border-color/25">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Ready to Innovate?</h2>
           
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
