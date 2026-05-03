@@ -50,12 +50,16 @@ export function Portfolio() {
 
   return (
     <section className="px-8 py-16">
-      <h3 className="text-6xl font-bold text-gray-900 mb-12">Portfolio</h3>
+      <h3 className="text-6xl font-bold text-font-primary mb-12">Portfolio</h3>
 
       <div className="grid grid-cols-1 gap-3 pb-4">
         {achievements.map((competition, index) => (
           <div key={index} className="flex justify-between gap-3 pb-3 px-3 border-b border-gray-300 last:border-0 w-full">
-            <span className="text-gray-600 text-md">{competition.name}</span>
+
+            <span className="flex gap-4">
+              <span className="text-font-secondary text-md font-semibold">{competition.year}</span>
+              <span className="text-font-secondary text-md">{competition.name}</span>
+            </span>
 
             <div className={` py-1 px-3 max-h-min text-xs ${competition.staus === "Upcoming" ? "bg-amber-500/25" : "bg-green-500/25"} rounded-full`}>{competition.staus}</div>
           </div>

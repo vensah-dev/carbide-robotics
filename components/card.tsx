@@ -1,20 +1,18 @@
 "use client";
 
-interface CardProps {
-  icon: string;
-  title: string;
-  description: string;
-  colorClass: string;
-  BGz?: number;
-}
-
-export default function Card({ 
+export function Card({ 
   icon, 
   title, 
   description, 
   colorClass, 
-  BGz = 1,
-}: CardProps) {
+  BGz = 1 
+}: { 
+  icon: string; 
+  title: string; 
+  description: string; 
+  colorClass: string; 
+  BGz?: number; 
+}) {
   return (
     <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/75 rounded-xl p-8`}>
       <div className={`${colorClass} w-min rounded-2xl mb-4`}>
@@ -29,3 +27,4 @@ export default function Card({
     </div>
   );
 }
+
