@@ -17,8 +17,8 @@ export const CallToAction = forwardRef<HTMLDivElement>((props, ref) => {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <PrimaryButton text={"Accelerator Programme"} />
-            <SecondaryButton text={"Contact"} />
+            <PrimaryButton text={"Join Us"} href="https://forms.gle/qwe7wQ18xN9iNwTZ7" />
+            <SecondaryButton text={"Contact"} href="/contact" />
           </div>
 
         </div>

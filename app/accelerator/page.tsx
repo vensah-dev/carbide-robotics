@@ -10,7 +10,7 @@ import { CallToAction } from "@/components/call-to-action";
 
 export const metadata: Metadata = {
   title: "Carbide Robotics \\ STEM Accelerator",
-  description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
+  description: "Our programme aims to nurture passionate thinkers through the creation of STEM projects with assistance from a broader web of mentor coaches and like-minded students with adjacent expertise.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
   authors: [{ name: "Carbide Robotics" }],
   robots: "index, follow",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
     apple: "/carbide-robotics/icons/apple-icon.png",  // 180x180px recommended
   },
   openGraph: {
-    title: "Carbide Robotics | STEM Innovation & Competition",
-    description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
+    title: "Carbide Robotics \\ STEM Accelerator",
+    description: "Our programme aims to nurture passionate thinkers through the creation of STEM projects with assistance from a broader web of mentor coaches and like-minded students with adjacent expertise.",
     type: "website",
     images: [
       {
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carbide Robotics | STEM Innovation & Competition",
-    description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
+    title: "Carbide Robotics \\ STEM Accelerator",
+    description: "Our programme aims to nurture passionate thinkers through the creation of STEM projects with assistance from a broader web of mentor coaches and like-minded students with adjacent expertise.",
   },
 };
 

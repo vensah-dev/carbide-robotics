@@ -14,7 +14,7 @@ export function AcceleratorHero() {
     // THIS IS h-[calc(100vh-73px)] BECAUSE THE NAVBAR HEIGHT IS 73px. THIS ENSURES THE HERO SECTION TAKES UP THE FULL VIEWPORT HEIGHT MINUS THE NAVBAR.  
       <section className="flex items-center px-8 text-left h-[calc(100vh-73px)] relative">
         <Image src={bgImage} fill alt="Hero Image" className="absolute object-cover w-[100%]" />
-        <div className="absolute w-screen h-screen inset-0 bg-linear-to-r from-font-primary/75 to-transparent z-10" />
+        <div className="absolute w-full h-full inset-0 bg-linear-to-r from-font-primary/75 to-transparent z-10" />
         
         <div className="max-w-6xl z-10">
 

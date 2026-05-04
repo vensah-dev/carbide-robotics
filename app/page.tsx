@@ -9,6 +9,7 @@ import { CallToAction } from "@/components/call-to-action";
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import { ProjectsWidget } from "@/components/projects-widget";
 
 export default function Home() {
   const ctaSectionRef = useRef<HTMLDivElement>(null);
@@ -47,8 +48,8 @@ export default function Home() {
         {/* Overview Card */}
         <Mission />
 
-        {/* Portfolio Section */}
-        <Portfolio />
+        {/* Projects Section */}
+        <ProjectsWidget />
 
         {/* CTA Section */}
         <CallToAction ref={ctaSectionRef} />
