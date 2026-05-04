@@ -6,7 +6,7 @@ export function ImageCard({
   image, 
   title, 
   description, 
-  BGz = 1 
+  BGz = 1
 }: { 
   image: StaticImageData; 
   title: string; 
@@ -14,7 +14,7 @@ export function ImageCard({
   BGz?: number; 
 }) {
   return (
-    <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/25 rounded-xl overflow-hidden flex flex-col`}>
+    <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/25 rounded-xl overflow-hidden flex flex-col hover:brightness-95 transition-all`}>
       <Image src={image} alt={title} className="h-full object-cover " />
 
       <div className="p-8 "> 
