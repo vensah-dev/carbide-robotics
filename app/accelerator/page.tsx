@@ -7,6 +7,7 @@ import { Culture } from "@/components/culture";
 import { Portfolio } from "@/components/portfolio";
 import { CallToAction } from "@/components/call-to-action";
 
+
 export const metadata: Metadata = {
   title: "Carbide Robotics \\ STEM Accelerator",
   description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
