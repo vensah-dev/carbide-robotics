@@ -15,7 +15,7 @@ export function ImageCard({
 }) {
   return (
     <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/25 rounded-xl overflow-hidden flex flex-col hover:brightness-98 transition-all`}>
-      <Image src={image} alt={title} className="h-full object-cover " />
+      <Image src={image} alt={title} className="w-full object-cover aspect-5/3" />
 
       <div className="p-8 "> 
         <h3 className="text-font-primary font-semibold text-2xl mb-4">{title}</h3>

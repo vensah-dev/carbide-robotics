@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Carbide Robotics \\ Contact",
   description: "Have questions or want to learn more about our programmes? Get in touch with us!",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }],
+  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }],
   robots: "index, follow",
   icons: {
     icon: "/carbide-robotics/icons/icon.png",

@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import { ImageCard } from "./image-card";
 
 import andoVest from "@/public/images/ando-vest.png";
-import glacialPlanters from "@/public/images/glacial-planters.png";
+import Plantanator from "@/public/images/plantanator.png";
 import H2O from "@/public/images/fleet-system.png";
 
 
@@ -58,9 +58,9 @@ export function ProjectsWidget() {
 
         {/* STEM Accelerator */}
         <ImageCard
-          image={glacialPlanters}
-          title={"Glacial Planters"}
-          description={"The solution to increasing crop productivity, variety and food independence while sharply cutting carbon output and financial cost"}
+          image={Plantanator}
+          title={"Planatanator"}
+          description={"An affordable, intuitive, modular and scalable solution to yield crops autonomously at both consumer and industrial levels"}
           BGz={2}
         />
 

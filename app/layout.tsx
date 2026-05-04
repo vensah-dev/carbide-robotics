@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Carbide Robotics",
   description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }],
+  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }],
   robots: "index, follow",
   icons: {
     icon: "/carbide-robotics/icons/icon.png",

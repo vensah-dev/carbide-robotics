@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Carbide Robotics \\ STEM Accelerator",
   description: "Our programme aims to nurture passionate thinkers through the creation of STEM projects with assistance from a broader web of mentor coaches and like-minded students with adjacent expertise.",
   keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }],
+  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }],
   robots: "index, follow",
   icons: {
     icon: "/carbide-robotics/icons/icon.png",
