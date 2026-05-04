@@ -27,7 +27,7 @@ export function GridBackground() {
     // do not use -z-1 or anything here, do not need to set z level!!!!
     <div className="absolute inset-0 overflow-hidden">
       
-      <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-15">
+      <div className="grid grid-cols-12 grid-rows-12 h-full w-full animate-[pulse-opacity_10s_infinite]">
         {gridCells}
       </div>
 
