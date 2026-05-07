@@ -45,31 +45,31 @@ export function Portfolio() {
     },
 
     // Upcoming
-    {
-      "name": "Samsung Solve for Tomorrow",
-      "status": "Upcoming",
-      "year": 2026
-    },
-    {
-      "name": "Huawei Tech4City",
-      "status": "Upcoming",
-      "year": 2026
-    },
-    {
-      "name": "World Robotics Olympiad (US)",
-      "status": "Upcoming",
-      "year": 2026
-    },
-    {
-      "name": "National Robotics Competition",
-      "status": "Upcoming",
-      "year": 2026
-    },
-    {
-      "name": "Tan Kah Kee Young Inventors Award",
-      "status": "Upcoming",
-      "year": 2026
-    }
+    // {
+    //   "name": "Samsung Solve for Tomorrow",
+    //   "status": "Upcoming",
+    //   "year": 2026
+    // },
+    // {
+    //   "name": "Huawei Tech4City",
+    //   "status": "Upcoming",
+    //   "year": 2026
+    // },
+    // {
+    //   "name": "World Robotics Olympiad (US)",
+    //   "status": "Upcoming",
+    //   "year": 2026
+    // },
+    // {
+    //   "name": "National Robotics Competition",
+    //   "status": "Upcoming",
+    //   "year": 2026
+    // },
+    // {
+    //   "name": "Tan Kah Kee Young Inventors Award",
+    //   "status": "Upcoming",
+    //   "year": 2026
+    // }
   ]
 
   return (

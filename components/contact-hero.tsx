@@ -4,9 +4,6 @@ import Link from "next/link";
 import { PrimaryButton } from "./primary-button";
 import { SecondaryButton } from "./secondary-button";
 import { GridBackground } from "./grid-background";
-import Image from "next/image";
-import bgImage from "@/public/images/accelerator-hero-bg.png";
-
 
 export function ContactHero() {
 

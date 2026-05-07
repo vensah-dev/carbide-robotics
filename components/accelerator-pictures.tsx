@@ -7,9 +7,13 @@ import { ImageCard } from "./image-card";
 import andoVest from "@/public/images/ando-vest.png";
 import Plantanator from "@/public/images/plantanator.png";
 import H2O from "@/public/images/fleet-system.png";
+import laptopStand from "@/public/images/laptop-stand.png";
+import SFTWin from "@/public/images/SFT-win.png";
+import plantantorPresentation from "@/public/images/plantanator-presentation.png";
+import glacialPlanters from "@/public/images/glacial-planters.png";
 
 
-export function ProjectsWidget() {
+export function AcceleratorPictures() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -40,37 +44,27 @@ export function ProjectsWidget() {
       className="bg-background-primary px-8 py-32"
       data-animate-on-scroll
     >
-      <div className="text-left mb-12">
-        <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Projects</h2>
+      {/* <div className="text-left mb-12">
+        <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
         <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
-          Some of the projects that we have built and submitted for competitions.
+          Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
         </p>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Competitions */}
+        
         <ImageCard
-          image={andoVest}
-          title={"Ando Hypohidrosis Vests"}
-          description={"An innovative non-invasive approach to effectively replacing sweat glands in persons living with Hypohidrosis"}
-          BGz={2}
+          image={plantantorPresentation}
         />
 
-        {/* STEM Accelerator */}
         <ImageCard
-          image={Plantanator}
-          title={"Planatanator"}
-          description={"An affordable, intuitive, modular and scalable solution to yield crops autonomously at both consumer and industrial levels"}
-          BGz={2}
+          image={SFTWin}
         />
 
-        {/* Mentorship Pipeline */}
         <ImageCard
-          image={H2O}
-          title={"Anti-hydrocarbon Fleet System"}
-          description={"The solution to predictively combat ocean micro-spillage hotspots using autonomous fleet swarming drone fleets"}
-          BGz={2}
+          image={glacialPlanters}
         />
+
       </div>
     </section>
   );
