@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://yourdomain.com/carbide-robotics/icons/og-image.png",  // needs full basePath prefix
+        url: "https://carbiderobotics.com/icons/og-image.png",  // needs full basePath prefix
         width: 1200,  // recommended OG image size
         height: 630,
         alt: "Carbide Robotics Logo",
