@@ -22,7 +22,7 @@ export function Hero(
       <section className="flex items-center px-8 text-left h-[calc(100vh-73px)] relative">
         <GridBackground />
         
-        <div className="w-6xl 2xl:w-360 mx-auto z-10">
+        <div className="w-7xl 2xl:w-360 mx-auto z-10">
 
           <h1 className="text-5xl md:text-8xl 2xl:text-9xl font-bold text-font-primary mb-3 leading-[1.15] animate-fade-in-up">
             {title}
