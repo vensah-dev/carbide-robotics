@@ -8,6 +8,7 @@ import { projects } from '../../../lib/projects';
 // import { ProjectsDetailView } from '@/components/project-detail-view';
 import Head from 'next/head';
 import { ProjectDetailView } from '@/components/project-detail-view';
+import NotFound from '@/app/not-found';
 
 export const generateStaticParams = async () => {
 
@@ -68,9 +69,9 @@ export default async function ProjectsDetailPage({ params }:{ params: any }) {
     return (
         <>
             {
-                params.key === "all" ? (
-                    <div className='py-[136px]'>
-                        All Projects
+                key === "all" ? (
+                    <div>
+                        <NotFound />
                     </div>
                 ) : (
                     // <ProjectsDetailView project={project} />
