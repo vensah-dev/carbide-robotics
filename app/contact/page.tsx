@@ -1,7 +1,9 @@
-import { ContactHero } from "@/components/contact-hero";
 import { Footer } from "@/components/footer";
+import { Hero } from "@/components/hero";
 import { Navbar } from "@/components/navbar";
 import type { Metadata } from "next";
+import { PrimaryButton } from "@/components/primary-button";
+import { SecondaryButton } from "@/components/secondary-button";
 
 
 export const metadata: Metadata = {
@@ -42,7 +44,14 @@ export default function ContactPage() {
 
       {/* Contact Section */}
       <div className="w-screen">
-        <ContactHero />
+        <Hero 
+          title={<>Contact Us</>}
+          tagline={<>Have questions or want to learn more about our programmes? <br /> Get in touch with us!</>}
+          buttons={[
+            <PrimaryButton text="Join Us" href="https://forms.gle/qwe7wQ18xN9iNwTZ7" key="https://forms.gle/qwe7wQ18xN9iNwTZ7"/>,
+            <SecondaryButton text="contact@carbiderobotics.com" href="mailto:contact@carbiderobotics.com" key="contact@carbiderobotics.com" />
+          ]}
+        />
 
       </div>
 

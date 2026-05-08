@@ -11,6 +11,8 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { HighlightedProjects } from "@/components/highlighted-projects";
 import { WhoAreWe } from "@/components/who-are-we";
+import { SecondaryButton } from "@/components/secondary-button";
+import { PrimaryButton } from "@/components/primary-button";
 
 export default function Home() {
   const ctaSectionRef = useRef<HTMLDivElement>(null);
@@ -42,7 +44,14 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <Hero />
+      <Hero 
+        title={<>Engineered by students, for students.</>}
+        tagline={<>Carbide Robotics is a student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.</>}
+        buttons={[
+          <PrimaryButton text="Accelerator Programme" href="/accelerator" key="/accelerator"/>,
+          <SecondaryButton text="Contact" href="/contact" key="/contact" />
+        ]}
+      />
 
       {/* Content Sections */}
       <div className="w-screen">

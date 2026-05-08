@@ -41,31 +41,32 @@ export function AcceleratorPictures() {
     <section 
       ref={sectionRef}
       id="overview" 
-      className="bg-background-primary px-8 py-32"
+      className="bg-background-primary px-8 py-16"
       data-animate-on-scroll
     >
-      {/* <div className="text-left mb-12">
-        <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
-        <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
-          Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
-        </p>
-      </div> */}
+      <div className="max-w-7xl mx-auto">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* <div className="text-left mb-12">
+          <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
+          <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
+            Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
+          </p>
+        </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <ImageCard
-          image={plantantorPresentation}
-        />
-
-        <ImageCard
-          image={SFTWin}
-        />
-
-        <ImageCard
-          image={glacialPlanters}
-        />
+          <ImageCard
+            image={plantantorPresentation}
+          />
+          <ImageCard
+            image={SFTWin}
+          />
+          <ImageCard
+            image={glacialPlanters}
+          />
+        </div>
 
       </div>
+
     </section>
   );
 }

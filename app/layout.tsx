@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Urbanist } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const urbanist = Urbanist({
+  subsets: ['latin'],
+  variable: '--font-urbanist', // Optional: for Tailwind integration
+})
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -18,22 +18,35 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Carbide Robotics",
-  description: "Empowering up-and-coming passionate thinkers through robotics competitions, STEM projects, and mentorship programs. Join our mission to foster innovation.",
-  keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }],
-  robots: "index, follow",
-  icons: {
-    icon: "/carbide-robotics/icons/icon.png",
-    apple: "/carbide-robotics/icons/apple-icon.png",  // 180x180px recommended
+  title: {
+    default: "Carbide Robotics",
+    template: "%s | Carbide Robotics", 
   },
+  description: "A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.",
+
+  keywords: "robotics, STEM, competitions, mentorship, innovation, technology, education",
+  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }, { name: "Ng Yu Fei" }, { name: "Venkatesh Devendran" }],
+  robots: "index, follow",
+  metadataBase: new URL("https://carbiderobotics.com"),
+
+  icons: {
+    icon: [
+      { url: "/icons/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      { url: "/icons/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icons/apple-touch-icon.png",
+  },
+  
   openGraph: {
     title: "Carbide Robotics | STEM Innovation & Competition",
-    description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
+    description: "A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.",
     type: "website",
     images: [
       {
-        url: "../icons/icon.png",  // needs full basePath prefix
+        url: "https://yourdomain.com/carbide-robotics/icons/og-image.png",  // needs full basePath prefix
         width: 1200,  // recommended OG image size
         height: 630,
         alt: "Carbide Robotics Logo",
@@ -43,13 +56,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Carbide Robotics | STEM Innovation & Competition",
-    description: "Empowering the next generation of STEM innovators through robotics competitions and mentorship",
+    description: "A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.",
   },
 };
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>) { 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-background-primary`}>
+    <html lang="en" className={`${urbanist.variable} ${geistMono.variable} h-full antialiased bg-background-primary`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

@@ -37,28 +37,35 @@ export function Navbar() {
       {/* logo and title */}
       <Link href="/" className="flex items-center gap-2">
         <Image src={icon} width={32} height={32} alt="Carbide Robotics Logo" className="rounded-full"/>
-        <span className="text-xl font-semibold text-gray-900">Carbide Robotics</span>
+        <span className="text-xl font-semibold text-font-primary">Carbide Robotics</span>
       </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-8">
         <Link 
           href="/" 
-          className={`font-medium ${pathname === '/' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+          className={`font-medium ${pathname === '/' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
         >
           About
         </Link>
 
         <Link 
           href="/accelerator" 
-          className={`font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+          className={`font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
         >
           Accelerator
         </Link>
 
+        {/* <Link 
+          href="/projects" 
+          className={`font-medium ${pathname === '/projects' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
+        >
+          Projects
+        </Link> */}
+
         <Link 
           href="/contact" 
-          className={`font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+          className={`font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
         >
           Contact
         </Link>
@@ -66,7 +73,7 @@ export function Navbar() {
 
       {/* Mobile Menu Button */}
       <button 
-        className="md:hidden text-gray-900 focus:outline-none"
+        className="md:hidden text-font-primary focus:outline-none"
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
@@ -127,7 +134,7 @@ export function Navbar() {
           <div className="flex flex-col items-center justify-center flex-grow gap-8">
             <Link 
               href="/" 
-              className={`text-2xl font-medium ${pathname === '/' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+              className={`text-2xl font-medium ${pathname === '/' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               About
@@ -135,7 +142,7 @@ export function Navbar() {
 
             <Link 
               href="/accelerator" 
-              className={`text-2xl font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+              className={`text-2xl font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Accelerator
@@ -143,7 +150,7 @@ export function Navbar() {
 
             <Link 
               href="/contact" 
-              className={`text-2xl font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-gray-600 hover:text-gray-900 transition-colors'}`}
+              className={`text-2xl font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact

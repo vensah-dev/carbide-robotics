@@ -6,6 +6,7 @@ import { AcceleratorHero } from "@/components/accelerator-hero";
 import { Culture } from "@/components/culture";
 import { AcceleratorPictures }  from "@/components/accelerator-pictures";
 import { CallToAction } from "@/components/call-to-action";
+import { Hero } from "@/components/hero";
 
 
 
@@ -47,7 +48,10 @@ export default function AcceleratorPage() {
 
       {/* Accelerator Programme */}
       <div className="w-screen">
-        <AcceleratorHero />
+        <Hero 
+          title={<>STEM Accelerator Programme</>}
+          tagline={<>Our programme aims to nurture passionate thinkers through the creation of STEM projects with assistance from a broader web of mentor coaches and like-minded students with adjacent expertise.</>}
+        />
 
 
         {/* Culture Section */}
