@@ -90,6 +90,39 @@ body {
   }
 }
 
+@keyframes pulse-opacity-higher {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
@@ -107,19 +140,36 @@ body {
   animation-delay: 0.7s;
 }
 
-/* Scroll animations */
-[data-animate-on-scroll] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-[data-animate-on-scroll].animate-in-view {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* Grid background animation */
-.animate-pulse-opacity {
-  animation: pulse-opacity 2s infinite;
+.animate-scroll-right {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 60s linear infinite;
 }
+
+.animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 360s linear infinite;
+}
+
+.animate-scroll-left-slow {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 300s linear infinite;
+}
+
+/* Pause on hover for better UX */
+/* .animate-scroll-left:hover,
+.animate-scroll-right:hover {
+  animation-play-state: paused;
+} */

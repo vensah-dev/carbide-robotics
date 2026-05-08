@@ -56,12 +56,12 @@ export function Navbar() {
           Accelerator
         </Link>
 
-        {/* <Link 
+        <Link 
           href="/projects" 
           className={`font-medium ${pathname === '/projects' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
         >
           Projects
-        </Link> */}
+        </Link>
 
         <Link 
           href="/contact" 

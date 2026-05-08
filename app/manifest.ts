@@ -5,6 +5,7 @@ export const dynamic = 'force-static'
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Carbide Robotics',
+    id: "carbide-robotics-sg",
     short_name: 'Carbide',
     description: 'A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.',
     start_url: '/',

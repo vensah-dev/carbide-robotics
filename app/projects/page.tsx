@@ -1,80 +1,88 @@
-import type { Metadata } from "next";
+"use client"; // This must be at the top for useState/useEffect
+
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import Link from "next/link";
-
-// Import projects data
 import { projects } from "@/lib/projects";
+import { GridBackground } from "@/components/grid-background";
 
-export const metadata: Metadata = {
-  title: "Carbide Robotics \\ Projects",
-  description: "Explore our collection of student-led STEM projects and innovations.",
-  keywords: "robotics, STEM, projects, innovation, technology, education",
-  authors: [{ name: "Carbide Robotics" }, { name: "vensah" }, { name: "vensah-dev" }],
-  robots: "index, follow",
-  icons: {
-    icon: "/carbide-robotics/icons/icon.png",
-    apple: "/carbide-robotics/icons/apple-icon.png",
-  },
-  openGraph: {
-    title: "Carbide Robotics \\ Projects",
-    description: "Explore our collection of student-led STEM projects and innovations.",
-    type: "website",
-    images: [
-      {
-        url: "../icons/icon.png",
-        width: 1200,
-        height: 630,
-        alt: "Carbide Robotics Logo",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Carbide Robotics \\ Projects",
-    description: "Explore our collection of student-led STEM projects and innovations.",
-  },
-};
+// Note: Metadata cannot be in the same file as "use client". 
+// You should move the metadata export to a separate layout.tsx 
+// or a parent page.tsx to avoid Next.js build errors.
 
 export default function ProjectsPage() {
+  const [rows, setRows] = useState<any>({ row1: [], row2: [], row3: [] });
+
+  useEffect(() => {
+    var shuffle = (array: any) => [...array].sort(() => Math.random() - 0.5);
+
+    setRows({
+      row1: [...projects].sort(() => Math.random() - 0.5),
+      row2: [...projects].sort(() => Math.random() - 0.5),
+      row3: [...projects].sort(() => Math.random() - 0.5),
+    });
+  }, []);
+
+  const ScrollingRow = ({ items, speed }: any) => (
+    <div className="flex w-full h-1/3 overflow-hidden">
+      <div className={`flex ${speed === 'slow' ? 'animate-scroll-left-slow' : 'animate-scroll-left'}`}>
+
+        {items.map((project: any, i: number) => (
+          <div key={`a-${project.id}-${i}`} className="h-60 aspect-video p-1 flex-shrink-0">
+            <img
+              src={project.fullPoster}
+              alt={project.title}
+              className="w-full h-full object-cover rounded-lg transition-all duration-500"
+            />
+          </div>
+        ))}
+
+        {items.map((project: any, i: number) => (
+          <div key={`b-${project.id}-${i}`} className="h-60 aspect-video p-1 flex-shrink-0">
+            <img
+              src={project.fullPoster}
+              alt={project.title}
+              className="w-full h-full object-cover rounded-lg transition-all duration-500"
+            />
+          </div>
+        ))}
+
+      </div>
+    </div>
+  );
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
+    <div className="">
       <Navbar />
 
-      {/* Projects Section */}
-      <div className="w-screen py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-5xl font-bold text-font-primary mb-12 text-center">Our Projects</h1>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <Link 
-                href={`/projects/${project.key}`} 
-                key={project.key}
-                className="bg-background-primary border border-border-color/25 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h2 className="text-xl font-bold text-font-primary">{project.title}</h2>
-                    <span className="text-sm text-font-tertiary">{project.year}</span>
-                  </div>
-                  <p className="text-font-secondary text-sm line-clamp-2">{project.description}</p>
-                </div>
-              </Link>
-            ))}
+      <div className="absolute w-screen h-[50vh] overflow-hidden z-0">
+
+        <div className="relative w-screen overflow-hidden -mt-35 animate-fade-in-up">
+          <div className="relative w-screen h-full bg-background-primary overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+            <div className="flex flex-col">
+              <ScrollingRow items={rows.row1} speed="fast" />
+              <ScrollingRow items={rows.row2} speed="slow" />
+              <ScrollingRow items={rows.row3} speed="fast" />
+            </div>
+            <div className="absolute inset-y-0 left-0 w-screen bg-gradient-to-r from-background-primary from-25% to-transparent z-10" />
+            {/* <div className="absolute inset-y-0 right-0 w-screen bg-gradient-to-l from-background-primary to-transparent z-10" /> */}
           </div>
+        </div>
+
+      </div>
+
+
+      <div className="flex items-center px-8 text-left h-[50vh] relative">
+        <div className="w-7xl 2xl:w-360 mx-auto z-50 ">
+          <h1 className="text-5xl md:text-8xl 2xl:text-9xl font-bold text-font-primary mb-3 leading-[1.15] animate-fade-in-up">
+            STEM projects
+          </h1>
+          <p className="md:max-w-2xl 2xl:max-w-3xl text-base md:text-xl 2xl:text-2xl text-font-secondary mb-8 leading-relaxed w-[70%] animate-fade-in-up animation-delay-300">
+            A collection of all the projects our members and students have created, ranging from basic personal projects to competition winning projects.
+          </p>
         </div>
       </div>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
