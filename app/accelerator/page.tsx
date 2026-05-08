@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
-import { AcceleratorHero } from "@/components/accelerator-hero";
 import { Culture } from "@/components/culture";
 import { AcceleratorPictures }  from "@/components/accelerator-pictures";
 import { CallToAction } from "@/components/call-to-action";
