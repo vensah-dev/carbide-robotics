@@ -64,7 +64,7 @@ export default function ProjectsPage() {
               <ScrollingRow items={rows.row2} speed="slow" />
               <ScrollingRow items={rows.row3} speed="fast" />
             </div>
-            <div className="absolute inset-y-0 left-0 w-screen bg-gradient-to-r from-background-primary from-25% to-transparent z-10" />
+            <div className="absolute inset-y-0 left-0 w-screen bg-gradient-to-r from-background-primary from-46% to-transparent z-10" />
             {/* <div className="absolute inset-y-0 right-0 w-screen bg-gradient-to-l from-background-primary to-transparent z-10" /> */}
           </div>
         </div>
