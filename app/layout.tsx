@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: {
     default: "Carbide Robotics",
-    template: "%s | Carbide Robotics", 
+    template: "%s \\ Carbide Robotics", 
   },
   description: "A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.",
 
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   
   openGraph: {
-    title: "Carbide Robotics | STEM Innovation & Competition",
+    title: "Carbide Robotics",
     description: "A student-led R&D organisation, a community of passionate innovators and a mentorship platform to nurture talents.",
     type: "website",
     images: [
