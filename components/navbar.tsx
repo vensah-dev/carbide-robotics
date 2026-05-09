@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import icon from '@/public/icons/icon.svg';
+import icon from '@/public/icons/icon-svg.svg';
 import { useState, useEffect } from 'react';
 
 export function Navbar() {
