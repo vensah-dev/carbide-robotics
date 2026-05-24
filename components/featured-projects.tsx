@@ -43,9 +43,9 @@ export function HighlightedProjects() {
 
       <div className="max-w-7xl mx-auto">
         <div className="text-left mb-12">
-          <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Projects</h2>
+          <h2 className="text-6xl font-bold text-gray-900 mb-4">Featured Projects</h2>
           <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
-            Some of the projects that we have built and submitted for competitions.
+            Showcase of some of our completed projects.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -66,7 +66,7 @@ export function HighlightedProjects() {
           {/* Laptop Stand */}
           <ImageCard
             image={laptopStand}
-            title={"Fan Laptop Stand"}
+            title={"Laptop Filtered Air Intake System"}
             description={"A laptop stand designed to channnel airflow in a way that reduces dust accumulation in the imternal laptop fans, reducing maintanance."}
             BGz={2}
           />

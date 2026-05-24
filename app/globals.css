@@ -90,6 +90,39 @@ body {
   }
 }
 
+@keyframes pulse-opacity-higher {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50%);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
   opacity: 0;
@@ -107,19 +140,129 @@ body {
   animation-delay: 0.7s;
 }
 
-/* Scroll animations */
-[data-animate-on-scroll] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-[data-animate-on-scroll].animate-in-view {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
-/* Grid background animation */
-.animate-pulse-opacity {
-  animation: pulse-opacity 2s infinite;
+.animate-scroll-right {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 60s linear infinite;
+}
+
+.animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 360s linear infinite;
+}
+
+.animate-scroll-left-slow {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 240s linear infinite;
+}
+
+/* Project Carousel Styles */
+.project-carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 1rem 0;
+}
+
+.project-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-carousel-item {
+  flex: 0 0 auto;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-carousel-item:hover {
+  transform: scale(1.02);
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-arrow.prev {
+  left: 1rem;
+}
+
+.carousel-arrow.next {
+  right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-carousel-item {
+    width: calc(100% - 2rem);
+  }
+  
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-arrow.prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-arrow.next {
+    right: 0.5rem;
+  }
+}
+
+/* Utility to hide scrollbars but keep functionality */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Full Screen Carousel Tweaks */
+.snap-always {
+  scroll-snap-stop: always;
+}
+
+/* Ensure the image transition is crisp */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
 }

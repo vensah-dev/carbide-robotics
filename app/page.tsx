@@ -9,7 +9,7 @@ import { CallToAction } from "@/components/call-to-action";
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import { HighlightedProjects } from "@/components/highlighted-projects";
+import { HighlightedProjects } from "@/components/featured-projects";
 import { WhoAreWe } from "@/components/who-are-we";
 import { SecondaryButton } from "@/components/secondary-button";
 import { PrimaryButton } from "@/components/primary-button";

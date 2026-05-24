@@ -46,9 +46,9 @@ export function Culture() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Competitions */}
           <Card
-            icon={"🎉"}
-            title={"Work Hard, Celebrate Hard"}
-            description={"Every win, big or small, is celebrated with equal enthusiasm. We believe in recognizing the hard work and dedication of our members, fostering a culture of appreciation and motivation."}
+            icon={"💪"}
+            title={"Resilience"}
+            description={"Crazy ideas and impossible problems are what we aim solve. We treat fear indifferently, we cultivate the guts to continue until impossible becomes reality."}
             colorClass={"bg-amber-700/15"}
             BGz={3}
           />
@@ -63,8 +63,8 @@ export function Culture() {
           {/* Mentorship Pipeline */}
           <Card
             icon={"🎗️"}
-            title={"Giving Back"}
-            description={"As a student-led organisation, we understand the value of mentorship. We encourage our students to give back by mentoring newer students to continue the sharing of knowledge."}
+            title={"Altruism"}
+            description={"Students don't build just to satiate their curiosity and learn, they build to make an impact. Every invention started with someone determined to fix an issue to improve this world."}
             colorClass={"bg-blue-500/15"}
             BGz={3}
           />
