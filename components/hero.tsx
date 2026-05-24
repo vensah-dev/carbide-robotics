@@ -22,13 +22,13 @@ export function Hero(
       <section className="flex items-center px-8 text-left h-[calc(100vh-73px)] relative">
         <GridBackground />
         
-        <div className="w-7xl mx-auto z-10">
+        <div className="md:max-w-7xl md:mx-auto w-full z-10">
 
-          <h1 className="text-5xl w-6xl 2xl:w-360 md:text-8xl 2xl:text-9xl font-bold text-font-primary mb-3 leading-[1.15] animate-fade-in-up">
+          <h1 className="text-5xl max-w-6xl 2xl:w-360 md:text-8xl 2xl:text-9xl font-bold text-font-primary mb-3 leading-[1.15] animate-fade-in-up">
             {title}
           </h1>
 
-          <p className="md:max-w-2xl 2xl:max-w-3xl text-base md:text-xl 2xl:text-2xl text-font-secondary mb-8 leading-relaxed w-[70%] animate-fade-in-up animation-delay-300">
+          <p className="w-full md:max-w-2xl 2xl:max-w-3xl text-base md:text-xl 2xl:text-2xl text-font-secondary mb-8 leading-relaxed md:w-[70%] animate-fade-in-up animation-delay-300">
             {tagline}
           </p>
 
