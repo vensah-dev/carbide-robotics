@@ -14,7 +14,7 @@ export function ImageCard({
   BGz?: number; 
 }) {
   return (
-    <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/25 rounded-xl overflow-hidden flex flex-col hover:brightness-98 transition-all`}>
+    <div className={`${BGz === 1 ? "bg-background-primary" : BGz === 2 ? "bg-background-secondary" : "bg-background-tertiary"} border border-border-color/25 rounded-lg overflow-hidden flex flex-col hover:brightness-98 transition-all`}>
       <Image src={image} alt={title || "Project Image"} className="w-full object-cover aspect-5/3" />
 
       {title && description && (

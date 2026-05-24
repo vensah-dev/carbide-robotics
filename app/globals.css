@@ -165,11 +165,104 @@ body {
 .animate-scroll-left-slow {
   display: flex;
   width: max-content;
-  animation: scroll-left 300s linear infinite;
+  animation: scroll-left 240s linear infinite;
 }
 
-/* Pause on hover for better UX */
-/* .animate-scroll-left:hover,
-.animate-scroll-right:hover {
-  animation-play-state: paused;
-} */
+/* Project Carousel Styles */
+.project-carousel-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 1rem 0;
+}
+
+.project-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-carousel-item {
+  flex: 0 0 auto;
+  width: calc(100% - 2rem);
+  margin: 0 1rem;
+  transition: transform 0.3s ease;
+}
+
+.project-carousel-item:hover {
+  transform: scale(1.02);
+}
+
+/* Navigation Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-arrow.prev {
+  left: 1rem;
+}
+
+.carousel-arrow.next {
+  right: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-carousel-item {
+    width: calc(100% - 2rem);
+  }
+  
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-arrow.prev {
+    left: 0.5rem;
+  }
+  
+  .carousel-arrow.next {
+    right: 0.5rem;
+  }
+}
+
+/* Utility to hide scrollbars but keep functionality */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Full Screen Carousel Tweaks */
+.snap-always {
+  scroll-snap-stop: always;
+}
+
+/* Ensure the image transition is crisp */
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+}

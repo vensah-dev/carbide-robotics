@@ -11,6 +11,7 @@ import laptopStand from "@/public/images/laptop-stand.png";
 import SFTWin from "@/public/images/SFT-win.png";
 import plantantorPresentation from "@/public/images/plantanator-presentation.png";
 import glacialPlanters from "@/public/images/glacial-planters.png";
+import caleb from "@/public/images/caleb.png";
 
 
 export function AcceleratorPictures() {
@@ -61,7 +62,7 @@ export function AcceleratorPictures() {
             image={SFTWin}
           />
           <ImageCard
-            image={glacialPlanters}
+            image={caleb}
           />
         </div>
 

@@ -32,6 +32,14 @@ export function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Navigation items configuration
+  const navItems = [
+    { title: "About", path: "/" },
+    { title: "Accelerator", path: "/accelerator" },
+    // { title: "Projects", path: "/projects" },
+    { title: "Contact", path: "/contact" }
+  ];
+
   return (
     <nav className="w-full py-5 px-8 flex justify-between items-center border-b border-gray-300/25">
       {/* logo and title */}
@@ -42,33 +50,15 @@ export function Navbar() {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-8">
-        <Link 
-          href="/" 
-          className={`font-medium ${pathname === '/' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-        >
-          About
-        </Link>
-
-        <Link 
-          href="/accelerator" 
-          className={`font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-        >
-          Accelerator
-        </Link>
-
-        <Link 
-          href="/projects" 
-          className={`font-medium ${pathname === '/projects' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-        >
-          Projects
-        </Link>
-
-        <Link 
-          href="/contact" 
-          className={`font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-        >
-          Contact
-        </Link>
+        {navItems.map((item) => (
+          <Link 
+            key={item.path}
+            href={item.path} 
+            className={`font-medium ${pathname === item.path ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
 
       {/* Mobile Menu Button */}
@@ -132,29 +122,16 @@ export function Navbar() {
           </div>
           
           <div className="flex flex-col items-center justify-center flex-grow gap-8">
-            <Link 
-              href="/" 
-              className={`text-2xl font-medium ${pathname === '/' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-
-            <Link 
-              href="/accelerator" 
-              className={`text-2xl font-medium ${pathname === '/accelerator' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Accelerator
-            </Link>
-
-            <Link 
-              href="/contact" 
-              className={`text-2xl font-medium ${pathname === '/contact' ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {navItems.map((item) => (
+              <Link 
+                key={item.path}
+                href={item.path} 
+                className={`text-2xl font-medium ${pathname === item.path ? 'text-orange-500' : 'text-font-secondary hover:text-font-primary transition-colors'}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.title}
+              </Link>
+            ))}
           </div>
         </div>
       )}

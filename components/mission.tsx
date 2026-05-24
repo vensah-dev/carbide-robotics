@@ -38,23 +38,23 @@ export function Mission() {
         <div className="text-left mb-12">
           <h2 className="text-6xl font-bold text-gray-900 mb-4">Our Mission</h2>
           <p className="text-lg text-font-secondary text-left leading-relaxed max-w-md mb-8">
-            Carbide Robotics is a student-led community focused on building niche and deep STEM portfolios.
+            Growing a community of passionate youth to share resources and knowledge to support niche STEM areas.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Competitions */}
           <Card
-            icon={"🏆"}
-            title={"Competitions"}
-            description={"Multi-disciplinary R&D teams formed through our Carbide Robotics community participate in national and international robotics competitions. These rich talents create an excellent portfolio year after year."}
+            icon={"👋"}
+            title={"Community"}
+            description={"We believe there are no stupid ideas. We don't fear failure, in fact we encourage it. Driven by the shared passion for STEM, We aim to stretch each other's capabilities to make an impact."}
             colorClass={"bg-amber-500/15"}
             BGz={3}
           />
           {/* STEM Accelerator */}
           <Card
             icon={"🌱"}
-            title={"Accelerator"}
-            description={"A curated programme connecting passionate students with mentor coaches across niche STEM fields. Participants' skills are stretched by creating projects and participating in related competitions."}
+            title={"Accelerator Programme"}
+            description={"A curated programme connecting students and mentors across niche STEM fields to invent new solutions, making society better one invention at a time."}
             colorClass={"bg-green-700/15"}
             BGz={3}
           />
@@ -62,7 +62,7 @@ export function Mission() {
           <Card
             icon={"👨🏼‍🏫"}
             title={"Mentorship"}
-            description={"Exemplary students from our teams are given the opportunity to become mentors, guiding the next batch of students and fostering a sustainable culture of peer mentorship and knowledge sharing."}
+            description={"Exceptional members go beyond their own growth, stepping up to guide newer members and shape the next inventors who will continue to move the world forward."}
             colorClass={"bg-blue-500/15"}
             BGz={3}
           />

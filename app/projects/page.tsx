@@ -1,86 +1,172 @@
-"use client"; // This must be at the top for useState/useEffect
+"use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { projects } from "@/lib/projects";
-import { GridBackground } from "@/components/grid-background";
-
-// Note: Metadata cannot be in the same file as "use client". 
-// You should move the metadata export to a separate layout.tsx 
-// or a parent page.tsx to avoid Next.js build errors.
+import Image from "next/image";
+import { BsChevronCompactDown } from "react-icons/bs";
+import { PrimaryButton } from "@/components/primary-button";
+import { SecondaryButton } from "@/components/secondary-button";
 
 export default function ProjectsPage() {
-  const [rows, setRows] = useState<any>({ row1: [], row2: [], row3: [] });
+
+  // #region
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const [snapping, setSnapping] = useState(false);
+  const [snapDuration, setSnapDuration] = useState(1000);
+  const [snapDirection, setSnapDirection] = useState(0);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const currentIndexRef = useRef(0);
+  const progressRef = useRef(0);
+  const wheelEndTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const featuredProjects = projects.slice(0, 5);
 
   useEffect(() => {
-    var shuffle = (array: any) => [...array].sort(() => Math.random() - 0.5);
+    const container = containerRef.current;
+    if (!container) return;
 
-    setRows({
-      row1: [...projects].sort(() => Math.random() - 0.5),
-      row2: [...projects].sort(() => Math.random() - 0.5),
-      row3: [...projects].sort(() => Math.random() - 0.5),
-    });
-  }, []);
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
 
-  const ScrollingRow = ({ items, speed }: any) => (
-    <div className="flex w-full h-1/3 overflow-hidden">
-      <div className={`flex ${speed === 'slow' ? 'animate-scroll-left-slow' : 'animate-scroll-left'}`}>
+      if (wheelEndTimer.current) clearTimeout(wheelEndTimer.current);
+      setSnapping(false);
 
-        {items.map((project: any, i: number) => (
-          <div key={`a-${project.id}-${i}`} className="h-60 aspect-video p-1 flex-shrink-0">
-            <img
-              src={project.fullPoster}
-              alt={project.title}
-              className="w-full h-full object-cover rounded-lg transition-all duration-500"
-            />
-          </div>
-        ))}
+      const delta = e.deltaY;
+      let p = progressRef.current + delta/1000;
+      let idx = currentIndexRef.current;
 
-        {items.map((project: any, i: number) => (
-          <div key={`b-${project.id}-${i}`} className="h-60 aspect-video p-1 flex-shrink-0">
-            <img
-              src={project.fullPoster}
-              alt={project.title}
-              className="w-full h-full object-cover rounded-lg transition-all duration-500"
-            />
-          </div>
-        ))}
+      if (p >= 1 && idx < featuredProjects.length - 1) {
+        idx += 1;
+        p -= 1;
+      } else if (p <= -1 && idx > 0) {
+        idx -= 1;
+        p += 1;
+      }
 
-      </div>
-    </div>
-  );
+      if (idx === 0 && p < 0) p = 0;
+      if (idx === featuredProjects.length - 1 && p > 0) p = 0;
+
+      currentIndexRef.current = idx;
+      progressRef.current = p;
+      setCurrentIndex(idx);
+      setProgress(p);
+
+      wheelEndTimer.current = setTimeout(() => {
+        const snap =
+          progressRef.current >= 0.5 && currentIndexRef.current < featuredProjects.length - 1
+            ? { p: 1, idx: currentIndexRef.current }
+            : progressRef.current <= -0.5 && currentIndexRef.current > 0
+            ? { p: -1, idx: currentIndexRef.current }
+            : { p: 0, idx: currentIndexRef.current };
+
+        const remaining = Math.abs(snap.p - progressRef.current);
+        const duration = Math.round(remaining * 1000);
+
+        const dir = progressRef.current > 0 ? 1 : progressRef.current < 0 ? -1 : 0;
+        setSnapDirection(dir);
+        setSnapping(true);
+        setSnapDuration(duration);
+
+        requestAnimationFrame(() => {
+          progressRef.current = snap.p;
+          setProgress(snap.p);
+
+          setTimeout(() => {
+            if (snap.p === 1) {
+              currentIndexRef.current = snap.idx + 1;
+              setCurrentIndex(snap.idx + 1);
+            } else if (snap.p === -1) {
+              currentIndexRef.current = snap.idx - 1;
+              setCurrentIndex(snap.idx - 1);
+            }
+            progressRef.current = 0;
+            setProgress(0);
+            setSnapping(false);
+          }, duration);
+        });
+      }, 420);
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+    return () => container.removeEventListener("wheel", handleWheel);
+  }, [featuredProjects.length]);
+
+  const getSlideStyle = (idx: number): React.CSSProperties => {
+    const p = progress;
+    const cur = currentIndex;
+    const transition = snapping
+      ? `clip-path ${snapDuration}ms cubic-bezier(0.76, 0, 0.24, 1)`
+      : "none";
+
+    const zDir = snapping ? snapDirection : p;
+
+    if (idx === cur) {
+      const clipPath =
+        p >= 0
+          ? `inset(0 0 ${p * 100}% 0)`
+          : `inset(${Math.abs(p) * 100}% 0 0 0)`;
+      return { clipPath, transition, zIndex: 10 };
+    }
+
+    if (idx === cur + 1) {
+      return { clipPath: "inset(0 0 0% 0)", zIndex: zDir >= 0 ? 5 : 1 };
+    }
+
+    if (idx === cur - 1) {
+      return { clipPath: "inset(0 0 0% 0)", zIndex: zDir < 0 ? 5 : 1 };
+    }
+
+    return {
+      clipPath: idx > cur ? "inset(0 0 100% 0)" : "inset(100% 0 0 0)",
+      zIndex: 1,
+    };
+  };
+
+  // #endregion
 
   return (
-    <div className="">
+    <div className="w-screen bg-background-primary">
       <Navbar />
 
-      <div className="absolute w-screen h-[50vh] overflow-hidden z-0">
-
-        <div className="relative w-screen overflow-hidden -mt-35 animate-fade-in-up">
-          <div className="relative w-screen h-full bg-background-primary overflow-hidden left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-            <div className="flex flex-col">
-              <ScrollingRow items={rows.row1} speed="fast" />
-              <ScrollingRow items={rows.row2} speed="slow" />
-              <ScrollingRow items={rows.row3} speed="fast" />
-            </div>
-            <div className="absolute inset-y-0 left-0 w-screen bg-gradient-to-r from-background-primary from-46% to-transparent z-10" />
-            {/* <div className="absolute inset-y-0 right-0 w-screen bg-gradient-to-l from-background-primary to-transparent z-10" /> */}
+      <div className="flex flex-col items-center justify-center h-[calc(100vh-73px)] relative gap-8">
+        {/* projects carousel */}
+        <div className="flex flex-col w-full aspect-1728/832 overflow-hidden relative self-center">
+          <main
+            ref={containerRef}
+            className="grow relative overflow-hidden"
+          >
+            {featuredProjects.map((project, idx) => (
+              <div
+                key={project.key}
+                className="absolute inset-0"
+                style={getSlideStyle(idx)}
+              >
+                <Image
+                  src={project.fullPoster}
+                  alt={project.title}
+                  fill
+                  priority={idx === 0}
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </main>
+          <div
+            className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-500 pointer-events-none ${
+              currentIndex === 0 && progress === 0 ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <BsChevronCompactDown className="text-3xl text-white/70 animate-bounce" />
           </div>
         </div>
 
-      </div>
-
-
-      <div className="flex items-center px-8 text-left h-[50vh] relative">
-        <div className="w-7xl 2xl:w-360 mx-auto z-50 ">
-          <h1 className="text-5xl md:text-8xl 2xl:text-9xl font-bold text-font-primary mb-3 leading-[1.15] animate-fade-in-up">
-            STEM projects
-          </h1>
-          <p className="md:max-w-2xl 2xl:max-w-3xl text-base md:text-xl 2xl:text-2xl text-font-secondary mb-8 leading-relaxed w-[70%] animate-fade-in-up animation-delay-300">
-            A collection of all the projects our members and students have created, ranging from basic personal projects to competition winning projects.
-          </p>
+        <div className="flex md:flex-row gap-4 animate-fade-in-up animation-delay-300">
+          <SecondaryButton text="View more" href="/projects/all" key="/projects/all"/>
         </div>
+
       </div>
 
       <Footer />
